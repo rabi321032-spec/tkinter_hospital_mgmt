@@ -5,7 +5,7 @@ class LoginModel:
 
     # simple check for empty fields
     def is_valid(self):
-        if self.username == "" or self.password == "":
+        if self.username == " " or self.password == "":
             return False
         else:
             return True
