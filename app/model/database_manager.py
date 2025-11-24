@@ -13,7 +13,7 @@ class DatabaseManager:
 
     def connect(self):
         try:
-            self.connection = mysql.connector.connect(**self.config)
+            self.connection = mysql.connect(**self.config)
             print("Connected to database successfully")
             return True
         except Exception as e:
@@ -56,23 +56,23 @@ class DatabaseManager:
 # Usage
 db = DatabaseManager('localhost', 'mydb', 'user', 'password')
 if db.connect():
-    # Create table
-    db.execute_query('''
-        CREATE TABLE IF NOT EXISTS customers (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(100),
-            email VARCHAR(100)
-        )
-    ''')
-
-    # Insert data
-    db.execute_query(
-        "INSERT INTO customers (name, email) VALUES (%s, %s)",
-        ('John Doe', 'john@example.com')
-    )
+    # # Create table
+    # db.execute_query('''
+    #     CREATE TABLE IF NOT EXISTS customers (
+    #         id INT AUTO_INCREMENT PRIMARY KEY,
+    #         name VARCHAR(100),
+    #         email VARCHAR(100)
+    #     )
+    # ''')
+    #
+    # # Insert data
+    # db.execute_query(
+    #     "INSERT INTO customers (name, email) VALUES (%s, %s)",
+    #     ('John Doe', 'john@example.com')
+    # )
 
     # Query data
-    results = db.execute_query("SELECT * FROM customers")
+    results = db.execute_query("SELECT * FROM login")
     print(results)
 
     db.close()
