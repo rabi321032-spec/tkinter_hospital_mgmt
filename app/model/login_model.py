@@ -1,3 +1,5 @@
+
+
 class LoginModel:
     def __init__(self, username, password):
         self.username = username
@@ -9,3 +11,6 @@ class LoginModel:
             return False
         else:
             return True
+
+
+
