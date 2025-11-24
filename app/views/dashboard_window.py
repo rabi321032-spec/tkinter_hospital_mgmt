@@ -77,7 +77,7 @@ class DashboardWindow:
             self.root.deiconify()
             admin_window.root.destroy()
 
-        admin_window = AdminDashboardWindow()
+        admin_window = AdminDashboardWindow(parent=self)
         admin_window.root.protocol("WM_DELETE_WINDOW", on_close)
         admin_window.run()
 
